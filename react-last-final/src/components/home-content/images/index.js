@@ -10,7 +10,14 @@ const Images = ({firstName}) => {
     const [data, setData] = useState([]);
 
     function favorite( id ) {
-        Service.getFavorite( id, {firstName} )
+        console.log(id, {firstName})
+        // Service.getFavorite( id, {firstName})
+        //     .then( response => {
+        //         console.log(id)
+        //         console.log(response)
+        //     } ); 
+        // ვატანდი მარა რატომრაც გაჭედა
+        Service.getFavorite( id, "name-is-not-usefull")
             .then( response => {
                 console.log(id)
                 console.log(response)
@@ -27,6 +34,7 @@ const Images = ({firstName}) => {
                     <img className={classes['image']}  src={data.url} alt="url" />
                     <button className="btn btn-primary" onClick={() => favorite(data.id)}>favorite</button>
                     {data.categories ? <p>{data.categories.name}</p> : null}
+                    <p>შეიძლება აპი კის გამოცვლა დაგჭირდეთ ერთ წამს მუშაობდა და მერე აღარ :(</p>
                 </>
             ) : (
                 <span>cant find</span>

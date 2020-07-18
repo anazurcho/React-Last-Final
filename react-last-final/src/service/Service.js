@@ -19,7 +19,7 @@ class Service {
     }
     async getFavorite(image_id, firstName) {
         // return await axios.get(`${settings.API_BASE_URL}images/search?breed_ids=beng?api_key=${settings.API_KEY}` )
-        return await axios.post( `${settings.API_BASE_URL}favourites`, {
+        return await axios.post( `${settings.API_BASE_URL}favourites?`, {
             image_id: image_id,
             sub_id: firstName
         }, 
